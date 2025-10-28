@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - yayabash
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Franka_Panda-Robot-
+  - UR10e-with-Robotiq-2F-140-Gripper-Lifting-Task
+  - CustomQuadrupedRobotTraining
+  - my_robot_v1.0
+  - rl-car-racing
+  - Simple-Patrolling-Behavior
