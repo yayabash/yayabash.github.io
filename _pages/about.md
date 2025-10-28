@@ -11,7 +11,7 @@ profile:
   more_info: >
     <p>Bursa, Turkey</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # CHANGED THIS: includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -28,3 +28,9 @@ latest_posts:
 A self-taught Robotics Engineer with hands-on experience in designing, developing, and deploying robotic systems. Proficient in ROS2, AI/ML, reinforcement learning, computer vision, humanoids, quadrupeds, Nvidia Isaac Sim/Isaac Lab, world models for predictive simulation, and foundation models for generalized robot intelligence. Strong team player with a passion for innovation, learning, and problem-solving in dynamic environments.
 
 Link to my GitHub and LinkedIn. Check out my projects for more details on my work, including the ongoing Moria robot project.
+
+## Research
+
+My primary research interests include **world models**, **Visual Language Models (VLAs)**, and **foundation models** for generalized robot intelligence, with a strong focus on **robot manipulation**.
+
+My current work centers on the **Moria Robot** project, where I am developing a humanoid robot workspace at Bursa Technical University. This involves applying multi-agent reinforcement learning, configuring ROS2 controllers, and integrating MoveIt for complex arm manipulation, all simulated within NVIDIA Isaac Sim.
