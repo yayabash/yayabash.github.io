@@ -4,7 +4,7 @@ import data, { getText } from "../../data";
 
 // Helper function to detect if file is a video
 const isVideoFile = (url) => {
-  if (!url) return false;
+  if (!url || typeof url !== "string") return false;
   const videoExtensions = ['.webm', '.mp4', '.mov', '.avi'];
   return videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
 };

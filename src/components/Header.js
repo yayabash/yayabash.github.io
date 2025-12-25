@@ -87,7 +87,7 @@ const Header = () => {
                         delaySpeed={1200}
                         words={language === 'zh' ? 
                           ["机器人工程师", "飞行员", "程序猿", "学生", "单簧管演奏者", "固件开发工程师"] :
-                          ["Robotics Engineer", "Pilot", "Code Monkey", "Accordionist", "Simulation Developer", "Student", "Clarinetist", "Firmware Developer"]
+                          ["Robotics Engineer", "mechanic", "Coder", "Novel Writter", "Simulation Developer", "Student", "Footballer", "Developer"]
                         }
                       />
                     </span>
@@ -101,7 +101,7 @@ const Header = () => {
 
               <Fade bottom>
                 <a
-                  href={`https://www.linkedin.com/in/stevenfeng7/`}
+                  href={`https://www.linkedin.com/in/yahye-bashiir-b5922b140/`}
                   className="primary-btn"
                 >
                   {getText({ en: "CONNECT WITH ME!", zh: "与我联系！" }, language)}
@@ -147,7 +147,7 @@ const Header = () => {
                     delaySpeed={1200}
                     words={language === 'zh' ? 
                       ["机器人工程师", "飞行员", "程序猿", "学生", "单簧管演奏者", "固件开发工程师"] :
-                      ["Robotics Engineer", "Pilot", "Code Monkey", "Accordionist", "Simulation Developer", "Student", "Clarinetist", "Firmware Developer"]
+                      ["Robotics Engineer", "mechanic", "Coder", "Novel Writter", "Simulation Developer", "Student", "Footballer", "Developer"]
                     }
                   />
                 </span>
@@ -161,7 +161,7 @@ const Header = () => {
 
           <Fade bottom>
             <a
-              href={`https://www.linkedin.com/in/stevenfeng7/`}
+              href={`https://www.linkedin.com/in/yahye-bashiir-b5922b140/`}
               className="primary-btn"
             >
               {getText({ en: "CONNECT WITH ME!", zh: "与我联系！" }, language)}

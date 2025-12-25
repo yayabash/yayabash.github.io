@@ -5,21 +5,16 @@ import { useLanguage } from "../contexts/LanguageContext"
 import data, { getText } from "../data"
 import "../styles/NVIDIA.scss"
 
-// Import NVIDIA images from the nvidia folder
-import gr1ImitationVideo from "./../images/nvidia/gr1_imitation.mp4"
-import h1FlipGif from "./../images/nvidia/h1_Flip.mp4"
-import leatherbackVideo from "./../images/nvidia/Leatherback.mp4"
-import h1TrainVideo from "./../images/nvidia/h1_Train.mp4"
-import frankaMoveitVideo from "./../images/nvidia/Franka Moveit.mp4"
-import frankaDrawerVideo from "./../images/nvidia/Franka Drawer.mp4"
-import carterOutdoorVideo from "./../images/nvidia/Carter Outdoor.mp4"
-import agilityWalkVideo from "./../images/nvidia/Agility Walk.mp4"
-import gtc_lousd from "./../images/nvidia/IMG_2228.webp"
-import gtc_sil from "./../images/nvidia/gtc_sil.webp"
-import newton from "./../images/nvidia/newton.webp"
-import claw from "./../images/nvidia/claw.mp4"
-import urLousdVideo from "./../images/publications/ur_lousd.mp4"
-import siggraphTalk from "./../images/nvidia/IMG_2877.webp"
+// Import MORIA media from the moria folder (kept media only)
+import gr1ImitationVideo from "./../images/moria/isaacsim_with_moveit_1.mp4"
+import h1FlipGif from "./../images/moria/Moria_ISAACSIM.mp4"
+import leatherbackVideo from "./../images/moria/Moveit_Gazebo.mp4"
+import h1TrainVideo from "./../images/moria/MTC.mp4"
+import frankaMoveitVideo from "./../images/moria/Pick_place_scene.mp4"
+import frankaDrawerVideo from "./../images/moria/Robot_Demo_pick_place.mp4"
+import carterOutdoorVideo from "./../images/moria/Trial_Robot_falling.mp4"
+import agilityWalkVideo from "./../images/moria/Me with Moria.webm"
+import gtc_lousd from "./../images/moria/pick_place_.png"
 
 const NVIDIA = () => {
   const { language } = useLanguage();
@@ -67,31 +62,29 @@ const NVIDIA = () => {
     };
   }, []);
   
-  // Media mapping for carousel items
+  // Media mapping for carousel items (only include the MORIA media to display)
   const mediaMap = {
     gr1ImitationVideo,
     h1FlipGif,
     h1TrainVideo,
-    urLousdVideo,
     frankaMoveitVideo,
     frankaDrawerVideo,
-    claw,
     leatherbackVideo,
     carterOutdoorVideo,
     agilityWalkVideo,
     gtc_lousd,
-    gtc_sil,
-    newton,
-    siggraphTalk
   };
 
   // Get carousel items from data with translated content
-  const carouselItems = data.nvidiaCarouselItems.map(item => ({
-    ...item,
-    media: mediaMap[item.media],
-    title: getText(item.title, language),
-    description: getText(item.description, language)
-  }));
+  // Map media names to actual imports, translate text, and filter out items without media
+  const carouselItems = data.nvidiaCarouselItems
+    .map(item => ({
+      ...item,
+      media: mediaMap[item.media],
+      title: getText(item.title, language),
+      description: getText(item.description, language)
+    }))
+    .filter(item => !!item.media);
 
   // Handle carousel selection with video preloading
   const handleCarouselSelect = (selectedIndex, e) => {

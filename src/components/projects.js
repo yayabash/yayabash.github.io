@@ -5,15 +5,18 @@ import { useLanguage } from "../contexts/LanguageContext"
 import data, { getText } from "../data"
 import "../styles/projects.scss"
 
-import airplaneImage from "../images/ProjectPhotos/airplane.webp"
-import watoImage from "../images/ProjectPhotos/Wato.webp"
+
+import customQuadrupedVideo from "../images/ProjectPhotos/custom_quadruped.mp4"
+import rlManipulationVideo from "../images/ProjectPhotos/RL manipulation_ur10_robotiq.mp4"
+import pandaColorSortingVideo from "../images/ProjectPhotos/panda_color_sorting.mp4"
+import soArmVideo from "../images/ProjectPhotos/so_arm.mp4"
+import patrollingRobotVideo from "../images/ProjectPhotos/patrolling robot.mp4"
+import dqnRacingVideo from "../images/ProjectPhotos/DQN RL car racing.mp4"
 import hisecurityImage from "../images/ProjectPhotos/HiSecurity2.webp"
 import pilotImg from "../images/ProjectPhotos/Pilot.webp"
+import firstYearPlaneImg from "../images/ProjectPhotos/2019.webp"
 import vexImg from "../images/ProjectPhotos/VEX.webp"
-import wearableImg from "../images/ProjectPhotos/wearableHacks.webp"
-import webappImg from "../images/ProjectPhotos/WebappProjects.webp"
-import mte380Img from "../images/ProjectPhotos/mte380.webp"
-import capstoneVideo from "../images/ProjectPhotos/capstone.mp4"
+import colorSortArmImg from "../images/ProjectPhotos/3-DOF Robotic Arm for Color-Based Box Sorting.webp"
 
 const Project = () => {
   const { language } = useLanguage();
@@ -22,15 +25,17 @@ const Project = () => {
 
   // Media mapping for carousel items
   const mediaMap = {
-    airplaneImage,
-    watoImage,
-    capstoneVideo,
-    webappImg,
-    wearableImg,
-    mte380Img,
+    customQuadrupedVideo,
+    rlManipulationVideo,
+    pandaColorSortingVideo,
+    soArmVideo,
+    patrollingRobotVideo,
+    dqnRacingVideo,
     hisecurityImage,
     vexImg,
-    pilotImg
+    pilotImg,
+    colorSortArmImg,
+    firstYearPlaneImg
   };
 
   // Get carousel items from data with translated content

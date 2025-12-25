@@ -5,17 +5,24 @@ import "./../css/modal.scss"
 
 // Helper function to detect if file is a video
 const isVideoFile = (url) => {
-  if (!url) return false;
+  if (!url || typeof url !== "string") return false;
   const videoExtensions = ['.webm', '.mp4', '.mov', '.avi'];
   return videoExtensions.some(ext => url.toLowerCase().endsWith(ext));
 };
 
-export default function Modal({ closeModal, id, type = "project", totalItems = 0, onPrevious, onNext }) {
+export default function Modal({ closeModal, id, type = "project", totalItems = 0, onPrevious, onNext, volunteerData }) {
   const { language } = useLanguage();
   const [isClosing, setIsClosing] = useState(false);
   
   // Determine which data to use based on the type
-  const content = type === "project" ? data.projects[id] : data.education[id];
+  let content;
+  if (type === "volunteer") {
+    content = volunteerData;
+  } else if (type === "project") {
+    content = data.projects[id];
+  } else {
+    content = data.education[id];
+  }
   
   // Enhanced close function with animation
   const handleClose = useCallback(() => {
@@ -141,13 +148,20 @@ export default function Modal({ closeModal, id, type = "project", totalItems = 0
           </>
         )}
         <div className="title">
-          <h1>{type === "project" ? getText(content.position, language) : getText(content.title, language)}</h1>
-          <h2>{type === "project" ? content.date : ""}</h2>
+          <h1>
+            {type === "project" ? getText(content.position, language) : getText(content.title, language)}
+          </h1>
+          <h2>
+            {type === "project" ? content.date : (type === "volunteer" ? getText(content.organization, language) : "")}
+          </h2>
+          {type === "volunteer" && content.date && (
+            <h3 className="date">{content.date}</h3>
+          )}
         </div>
         <div className="body">
-        {isVideoFile(content.workImg || content.imageSrc) ? (
+        {isVideoFile(type === "volunteer" ? (content.mediaSrc || content.imageSrc || content.workImg) : (content.workImg || content.imageSrc || content.mediaSrc)) ? (
           <video 
-            src={content.workImg || content.imageSrc} 
+            src={type === "volunteer" ? (content.mediaSrc || content.imageSrc || content.workImg) : (content.workImg || content.imageSrc || content.mediaSrc)} 
             className="img-fluid modal-media" 
             autoPlay
             muted
@@ -158,7 +172,7 @@ export default function Modal({ closeModal, id, type = "project", totalItems = 0
           />
         ) : (
           <img 
-            src={content.workImg || content.imageSrc} 
+            src={type === "volunteer" ? (content.mediaSrc || content.imageSrc || content.workImg) : (content.workImg || content.imageSrc || content.mediaSrc)} 
             alt="" 
             className="img-fluid modal-media" 
             loading="lazy"
@@ -166,11 +180,21 @@ export default function Modal({ closeModal, id, type = "project", totalItems = 0
         )}
 
         <ul>
-        {content.description.map((desc, index) => (
-                <li key={index}>{getText(desc, language)}</li>
-              ))}
+        {content.description && Array.isArray(content.description) ? (
+          content.description.map((desc, index) => (
+            <li key={index}>{getText(desc, language)}</li>
+          ))
+        ) : content.description ? (
+          <li>{getText(content.description, language)}</li>
+        ) : null}
+        
+        {content.details && Array.isArray(content.details) && (
+          content.details.map((detail, index) => (
+            <li key={`detail-${index}`}>{getText(detail, language)}</li>
+          ))
+        )}
           
-          </ul>
+        </ul>
         </div>
         {/* <div className="footer">
           <button onClick={() => closeModal(false)}>close</button>

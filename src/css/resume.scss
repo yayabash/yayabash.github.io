@@ -59,6 +59,76 @@ h1{
     }
 }
 
+/* Custom resume block styles for improved appearance */
+.resume-block {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  font-size: 1.08rem;
+  color: #222;
+}
+
+.resume-block h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+}
+.resume-block h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.2em;
+  color: #666;
+}
+.resume-contact {
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-size: 1.05em;
+}
+.resume-contact a {
+  color: #007acc;
+  text-decoration: none;
+  margin: 0 0.3em;
+  font-weight: 500;
+}
+.resume-block h4 {
+  margin-top: 2em;
+  font-size: 1.15rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.7em;
+}
+.resume-block ul {
+  margin-left: 1.2em;
+  margin-bottom: 0.7em;
+}
+.resume-block ul ul {
+  margin-left: 1.2em;
+  margin-bottom: 0.2em;
+}
+.resume-block li {
+  margin-bottom: 0.2em;
+  line-height: 1.5;
+}
+.resume-block p {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  text-align: center;
+  font-size: 1.05em;
+}
+
+@media (max-width: 900px) {
+  .resume-block {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    max-width: 98vw;
+  }
+}
+
 @media (max-width: 768px) {
     .Resume {
         width: 100%;
